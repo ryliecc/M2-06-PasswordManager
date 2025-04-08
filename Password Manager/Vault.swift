@@ -19,8 +19,8 @@ class Vault {
     
     func addEntry(_ newEntries: Entry...) {
         for entry in newEntries {
-            entryCounter += 1
             entries.append(entry)
+            entryCounter += 1
         }
     }
     
