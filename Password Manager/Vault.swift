@@ -65,4 +65,13 @@ class Vault {
         entries.sort{ $0.website < $1.website}
         return entries
     }
+    
+    // Aufgabe 2.3 Alte Einträge löschen
+    
+    func deleteOldEntries() {
+        print("Alte Anzahl der Einträge vor dem Löschen: \(entries.count)")
+        print("Alte Einträge werden gelöscht...")
+        entries.removeAll{ $0.id < 100 }
+        print("Neue Anzahl der Einträge: \(entries.count)")
+    }
 }

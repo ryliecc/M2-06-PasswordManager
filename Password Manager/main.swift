@@ -24,3 +24,9 @@ vault1.filterEntriesByUser(userName: "jryliec")
 // Aufgabe 2.2 Einträge alphabetisch nach Website sortieren
 
 print(vault1.sortEntriesByWebsite())
+
+// Aufgabe 2.3 Alte Einträge löschen
+
+var entry4: Entry = Entry(id: 101, website: "netflix.com", userName: "rylie.castell@examplemail.com", password: "netflixPw1")
+vault1.addEntry(entry4)
+vault1.deleteOldEntries()
