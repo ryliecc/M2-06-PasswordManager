@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A44605B2DA50F1E006AD1C6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44605A2DA50F1E006AD1C6 /* Entry.swift */; };
 		CE75F1DC2C8B129A001AD0A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F1DB2C8B129A001AD0A3 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7A44605A2DA50F1E006AD1C6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		CE75F1D82C8B129A001AD0A3 /* Password Manager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Password Manager"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE75F1DB2C8B129A001AD0A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				CE75F1DB2C8B129A001AD0A3 /* main.swift */,
+				7A44605A2DA50F1E006AD1C6 /* Entry.swift */,
 			);
 			path = "Password Manager";
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A44605B2DA50F1E006AD1C6 /* Entry.swift in Sources */,
 				CE75F1DC2C8B129A001AD0A3 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
