@@ -40,12 +40,12 @@ class Vault {
     
     func createNewEntry() -> Entry {
         print("Für welche Website soll der Eintrag erstellt werden?")
-        var website: String = readLine()!
+        let website: String = readLine()!
         print("Wie ist dein Benutzername?")
-        var userName: String = readLine()!
+        let userName: String = readLine()!
         print("Wie ist dein Passwort?")
-        var password: String = readLine()!
-        var newEntry: Entry = Entry(id: entryCounter + 1, website: website, userName: userName, password: password)
+        let password: String = readLine()!
+        let newEntry: Entry = Entry(id: entryCounter + 1, website: website, userName: userName, password: password)
         return newEntry
     }
     
