@@ -36,7 +36,7 @@ class Vault {
     // Aufgabe 1.4 Methode, um neue Einträge zu erstellen
     
     func createNewEntry() -> Entry {
-        var existingIds = Set(entries.map {$0.id})
+        let existingIds = Set(entries.map {$0.id})
         var id: Int
         repeat {
             id = Int.random(in: 1...999999)
