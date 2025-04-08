@@ -46,7 +46,7 @@ class Vault {
         print("Wie ist dein Benutzername?")
         let userName: String = readLine()!
         print("Wie ist dein Passwort?")
-        let password: String = readLine()!
+        let password: String = enterPasswordTwice()
         let newEntry: Entry = Entry(id: id, website: website, userName: userName, password: password)
         return newEntry
     }
@@ -95,6 +95,22 @@ class Vault {
         while isRunning {
             menu()
         }
+    }
+    
+    // Aufgabe 1.6 Passwort doppelt eingeben
+    
+    func enterPasswordTwice() -> String {
+        var firstInput: String = readLine()!
+        print("Gib das Passwort nochmal ein.")
+        var secondInput: String = readLine()!
+        while firstInput != secondInput {
+            print("Die Eingaben stimmen nicht überein. Bitte versuche es erneut und gib das Passwort ein.")
+            firstInput = readLine()!
+            print("Gib das Passwort nochmal ein.")
+            secondInput = readLine()!
+        }
+        print("Passwörter stimmen überein. Das Passwort wird gespeichert.")
+        return firstInput
     }
     
     // Aufgabe 2.1 Einträge nach Username filtern
