@@ -49,7 +49,7 @@ class Vault {
         return newEntry
     }
     
-    // 2.1 Einträge nach Username filtern
+    // Aufgabe 2.1 Einträge nach Username filtern
     
     func filterEntriesByUser(userName: String) {
         let filteredEntries: [Entry] = entries.filter{ $0.userName == userName}
@@ -57,5 +57,12 @@ class Vault {
         for entry in filteredEntries {
             print(entry.website)
         }
+    }
+    
+    // Aufgabe 2.2 Einträge alphabetisch nach Website sortieren
+    
+    func sortEntriesByWebsite() -> [Entry] {
+        entries.sort{ $0.website < $1.website}
+        return entries
     }
 }

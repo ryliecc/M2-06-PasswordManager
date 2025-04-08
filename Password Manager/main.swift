@@ -20,3 +20,7 @@ vault1.addEntry(vault1.createNewEntry())
 // Aufgabe 2.1 Einträge nach Username filtern
 
 vault1.filterEntriesByUser(userName: "jryliec")
+
+// Aufgabe 2.2 Einträge alphabetisch nach Website sortieren
+
+print(vault1.sortEntriesByWebsite())
