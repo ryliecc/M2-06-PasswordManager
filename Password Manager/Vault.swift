@@ -86,7 +86,7 @@ class Vault {
     func run() {
         var isRunning = false
         print("Willkommen zum Passwort Manager von SyntaxGuard. Bitte gib das Masterpasswort für den Manager ein um ins Hauptmenü zu gelangen.")
-        var input: String = readLine()!
+        let input: String = readLine()!
         if input != masterPassword {
             print("Falsches Passwort. Das Programm wird nun beendet. Wenn du es erneut probieren willst starte das Programm erneut.")
         } else {
