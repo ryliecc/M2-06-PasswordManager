@@ -57,10 +57,14 @@ class Vault {
         print("---Hauptmenü---")
         print("[1] - Erstelle neuen Eintrag")
         print("[2] - Zeige gespeicherte Einträge")
-        print("[3] - Beende das Programm")
+        // Aufgabe 2.5 Menü erweitern
+        print("[3] - Filter Einträge nach Username")
+        print("[4] - Sortiere Einträge alphabetisch nach Website")
+        print("[5] - Lösche alte Einträge")
+        print("[6] - Beende das Programm")
         print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
         var input: Int = enterInteger()
-        while input <= 0 || input >= 4 {
+        while input <= 0 || input >= 7 {
             print("Falsche Eingabe, bitte erneut versuchen.")
             input = enterInteger()
         }
@@ -77,6 +81,17 @@ class Vault {
             printAllEntries(password: masterPassword)
         }
         if input == 3 {
+            print("Nach welchem Username willst du suchen?")
+            let inputUserName: String = readLine()!
+            filterEntriesByUser(userName: inputUserName)
+        }
+        if input == 4 {
+            sortEntriesByWebsite().forEach { print($0) }
+        }
+        if input == 5 {
+            deleteOldEntries()
+        }
+        if input == 6 {
             exit(0)
         }
     }

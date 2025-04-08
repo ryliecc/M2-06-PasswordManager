@@ -14,30 +14,36 @@ var entry4: Entry = Entry(id: 101, website: "netflix.com", userName: "rylie.cast
 
 vault1.addEntry(entry1, entry2, entry3)
 
-vault1.printAllEntries(password: "wrongPassword")
-vault1.printAllEntries(password: "password123")
+//vault1.printAllEntries(password: "wrongPassword")
+//vault1.printAllEntries(password: "password123")
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 1.4 Methode, um neue Einträge zu erstellen
 
-vault1.addEntry(vault1.createNewEntry())
+//vault1.addEntry(vault1.createNewEntry())
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 1.5 Menü im Tresor aufsetzen
 
-vault1.menu()
+//vault1.menu()
+// Test erfolgreich, in run() integriert
 
 // Aufgabe 2.1 Einträge nach Username filtern
 
-vault1.filterEntriesByUser(userName: "jryliec")
+//vault1.filterEntriesByUser(userName: "jryliec")
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 2.2 Einträge alphabetisch nach Website sortieren
 
-print(vault1.sortEntriesByWebsite())
+//print(vault1.sortEntriesByWebsite())
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 2.3 Alte Einträge löschen
 // Instanz verschoben
 
 vault1.addEntry(entry4)
-vault1.deleteOldEntries()
+//vault1.deleteOldEntries()
+// Test erfolgreich, in menu() integriert
 
 // Run Methode für das gesamte Programm
 print()
