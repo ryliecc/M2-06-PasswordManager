@@ -86,7 +86,7 @@ class Vault {
             filterEntriesByUser(userName: inputUserName)
         }
         if input == 4 {
-            sortEntriesByWebsite().forEach { print($0) }
+            printEntriesSecurely(sortEntriesByWebsite())
         }
         if input == 5 {
             deleteOldEntries()
@@ -159,6 +159,13 @@ class Vault {
         } else {
             print("Einträge wurden nicht gelöscht.")
         }
+    }
+    
+    // Aufgabe 2.6 Einträge mit zensierten Passwörtern drucken
+    
+    func printEntriesSecurely(_ entries: [Entry]) {
+        let secureDisplayEntries = entries.map { Entry(id: $0.id, website: $0.website, userName: $0.userName, password: "*****") }
+        secureDisplayEntries.forEach { print($0) }
     }
     
     // Zusätzliche Hilfsmethoden
