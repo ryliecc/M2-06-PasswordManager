@@ -134,9 +134,16 @@ class Vault {
     
     func deleteOldEntries() {
         print("Alte Anzahl der Einträge vor dem Löschen: \(entries.count)")
-        print("Alte Einträge werden gelöscht...")
-        entries.removeAll{ $0.id < 100 }
-        print("Neue Anzahl der Einträge: \(entries.count)")
+        // Aufgabe 2.4 Alte Einträge löschen - Erweiterung
+        print("Folgende Einträge werden gelöscht:")
+        entries.filter { $0.id < 100 }.forEach { print($0) }
+        print("Bist du sicher, dass diese Einträge unwiderruflich gelöscht werden sollen?")
+        if validation() {
+            entries.removeAll{ $0.id < 100 }
+            print("Neue Anzahl der Einträge: \(entries.count)")
+        } else {
+            print("Einträge wurden nicht gelöscht.")
+        }
     }
     
     // Zusätzliche Hilfsmethoden
@@ -148,5 +155,16 @@ class Vault {
             } else {
                 return input!
             }
+        }
+    
+    private func validation() -> Bool {
+            print("Bitte bestätigen Sie: (ja/nein)")
+            var input: String = readLine()!
+            while input.lowercased() != "nein" && input.lowercased() != "ja" {
+                print("Falsche Eingabe.")
+                print("Bitte bestätigen Sie: (ja/nein)")
+                input = readLine()!
+            }
+            return input.lowercased() == "ja"
         }
 }
