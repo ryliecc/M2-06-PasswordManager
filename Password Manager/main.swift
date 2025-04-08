@@ -1,12 +1,16 @@
 import Foundation
 
-// Aufgabe 1.3 Klasse Tresor anlegen
+// Ablage für erstellte Instanzen
 
 var vault1: Vault = Vault(masterPassword: "password123")
 
 var entry1: Entry = Entry(id: 1, website: "youtube.com", userName: "jryliec", password: "youtubePassword!")
 var entry2: Entry = Entry(id: 2, website: "soundcloud.com", userName: "rylesmukke", password: "music4life")
 var entry3: Entry = Entry(id: 3, website: "github.com", userName: "ryliecc", password: "codeEatSleepRepeat")
+var entry4: Entry = Entry(id: 101, website: "netflix.com", userName: "rylie.castell@examplemail.com", password: "netflixPw1")
+
+// Aufgabe 1.3 Klasse Tresor anlegen
+// Instanzen verschoben
 
 vault1.addEntry(entry1, entry2, entry3)
 
@@ -30,7 +34,13 @@ vault1.filterEntriesByUser(userName: "jryliec")
 print(vault1.sortEntriesByWebsite())
 
 // Aufgabe 2.3 Alte Einträge löschen
+// Instanz verschoben
 
-var entry4: Entry = Entry(id: 101, website: "netflix.com", userName: "rylie.castell@examplemail.com", password: "netflixPw1")
 vault1.addEntry(entry4)
 vault1.deleteOldEntries()
+
+// Run Methode für das gesamte Programm
+print()
+print()
+print("-----Start des tatsächlichen Programms-----")
+vault1.run()
