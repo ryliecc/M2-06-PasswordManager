@@ -20,7 +20,6 @@ class Vault {
     func addEntry(_ newEntries: Entry...) {
         for entry in newEntries {
             entries.append(entry)
-            entryCounter += 1
         }
     }
     
@@ -36,16 +35,19 @@ class Vault {
     
     // Aufgabe 1.4 Methode, um neue Einträge zu erstellen
     
-    var entryCounter: Int = 0
-    
     func createNewEntry() -> Entry {
+        var existingIds = Set(entries.map {$0.id})
+        var id: Int
+        repeat {
+            id = Int.random(in: 1...999999)
+        } while existingIds.contains(id)
         print("Für welche Website soll der Eintrag erstellt werden?")
         let website: String = readLine()!
         print("Wie ist dein Benutzername?")
         let userName: String = readLine()!
         print("Wie ist dein Passwort?")
         let password: String = readLine()!
-        let newEntry: Entry = Entry(id: entryCounter + 1, website: website, userName: userName, password: password)
+        let newEntry: Entry = Entry(id: id, website: website, userName: userName, password: password)
         return newEntry
     }
     
