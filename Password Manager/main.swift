@@ -17,6 +17,10 @@ vault1.printAllEntries(password: "password123")
 
 vault1.addEntry(vault1.createNewEntry())
 
+// Aufgabe 1.5 Menü im Tresor aufsetzen
+
+vault1.menu()
+
 // Aufgabe 2.1 Einträge nach Username filtern
 
 vault1.filterEntriesByUser(userName: "jryliec")

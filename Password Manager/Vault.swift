@@ -51,6 +51,52 @@ class Vault {
         return newEntry
     }
     
+    // Aufgabe 1.5 Menü im Tresor aufsetzen
+    
+    func menu() {
+        print("---Hauptmenü---")
+        print("[1] - Erstelle neuen Eintrag")
+        print("[2] - Zeige gespeicherte Einträge")
+        print("[3] - Beende das Programm")
+        print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
+        var input: Int = enterInteger()
+        while input <= 0 || input >= 4 {
+            print("Falsche Eingabe, bitte erneut versuchen.")
+            input = enterInteger()
+        }
+        if input == 1 {
+            print("Wieviele neue Einträge willst du erstellen?")
+            var amount: Int = enterInteger()
+            while amount > 0 {
+                let newEntry: Entry = createNewEntry()
+                addEntry(newEntry)
+                amount -= 1
+            }
+        }
+        if input == 2 {
+            printAllEntries(password: masterPassword)
+        }
+        if input == 3 {
+            exit(0)
+        }
+    }
+    
+    // Methode um Menü immer wieder aufzurufen bis das Programm beendet wird
+    
+    func run() {
+        var isRunning = false
+        print("Willkommen zum Passwort Manager von SyntaxGuard. Bitte gib das Masterpasswort für den Manager ein um ins Hauptmenü zu gelangen.")
+        var input: String = readLine()!
+        if input != masterPassword {
+            print("Falsches Passwort. Das Programm wird nun beendet. Wenn du es erneut probieren willst starte das Programm erneut.")
+        } else {
+            isRunning = true
+        }
+        while isRunning {
+            menu()
+        }
+    }
+    
     // Aufgabe 2.1 Einträge nach Username filtern
     
     func filterEntriesByUser(userName: String) {
@@ -64,7 +110,7 @@ class Vault {
     // Aufgabe 2.2 Einträge alphabetisch nach Website sortieren
     
     func sortEntriesByWebsite() -> [Entry] {
-        entries.sort{ $0.website < $1.website}
+        entries.sort{ $0.website < $1.website }
         return entries
     }
     
@@ -76,4 +122,15 @@ class Vault {
         entries.removeAll{ $0.id < 100 }
         print("Neue Anzahl der Einträge: \(entries.count)")
     }
+    
+    // Zusätzliche Hilfsmethoden
+    
+    private func enterInteger() -> Int {
+            let input: Int? = Int(readLine()!)
+            if input == nil {
+                return 0
+            } else {
+                return input!
+            }
+        }
 }
