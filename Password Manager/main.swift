@@ -12,3 +12,11 @@ vault1.addEntry(entry1, entry2, entry3)
 
 vault1.printAllEntries(password: "wrongPassword")
 vault1.printAllEntries(password: "password123")
+
+// Aufgabe 1.4 Methode, um neue Einträge zu erstellen
+
+vault1.addEntry(vault1.createNewEntry())
+
+// Aufgabe 2.1 Einträge nach Username filtern
+
+vault1.filterEntriesByUser(userName: "jryliec")

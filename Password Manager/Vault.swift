@@ -48,4 +48,14 @@ class Vault {
         var newEntry: Entry = Entry(id: entryCounter + 1, website: website, userName: userName, password: password)
         return newEntry
     }
+    
+    // 2.1 Einträge nach Username filtern
+    
+    func filterEntriesByUser(userName: String) {
+        let filteredEntries: [Entry] = entries.filter{ $0.userName == userName}
+        print("Username: \(userName)\nGenutzt auf den folgenden Websites:")
+        for entry in filteredEntries {
+            print(entry.website)
+        }
+    }
 }
