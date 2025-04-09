@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A44605B2DA50F1E006AD1C6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44605A2DA50F1E006AD1C6 /* Entry.swift */; };
 		7A44605D2DA50FC0006AD1C6 /* Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44605C2DA50FC0006AD1C6 /* Vault.swift */; };
+		7A44605F2DA67CE6006AD1C6 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A44605E2DA67CE6006AD1C6 /* Closures.swift */; };
 		CE75F1DC2C8B129A001AD0A3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F1DB2C8B129A001AD0A3 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		7A44605A2DA50F1E006AD1C6 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		7A44605C2DA50FC0006AD1C6 /* Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vault.swift; sourceTree = "<group>"; };
+		7A44605E2DA67CE6006AD1C6 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		CE75F1D82C8B129A001AD0A3 /* Password Manager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Password Manager"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE75F1DB2C8B129A001AD0A3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 				CE75F1DB2C8B129A001AD0A3 /* main.swift */,
 				7A44605A2DA50F1E006AD1C6 /* Entry.swift */,
 				7A44605C2DA50FC0006AD1C6 /* Vault.swift */,
+				7A44605E2DA67CE6006AD1C6 /* Closures.swift */,
 			);
 			path = "Password Manager";
 			sourceTree = "<group>";
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A44605D2DA50FC0006AD1C6 /* Vault.swift in Sources */,
+				7A44605F2DA67CE6006AD1C6 /* Closures.swift in Sources */,
 				7A44605B2DA50F1E006AD1C6 /* Entry.swift in Sources */,
 				CE75F1DC2C8B129A001AD0A3 /* main.swift in Sources */,
 			);
