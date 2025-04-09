@@ -212,9 +212,8 @@ class Vault {
     // Aufgabe 3.4 Websites, die nicht auf .com enden
     
     func removeNotComDomain() {
-        let notComDomainEntries = entries.filter(isNotComDomain)
+        entries.filter(isNotComDomain).forEach { entry in print(entry) }
         entries.removeAll(where: isNotComDomain)
-        notComDomainEntries.forEach { entry in print(entry) }
     }
     
     // Zusätzliche Hilfsmethoden
