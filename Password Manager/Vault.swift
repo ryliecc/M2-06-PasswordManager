@@ -62,10 +62,14 @@ class Vault {
         print("[4] - Sortiere Einträge alphabetisch nach Website")
         print("[5] - Lösche alte Einträge")
         print("[6] - Suche nach Eintrag mit bestimmter Website")
-        print("[7] - Beende das Programm")
+        print("[7] - Suche nach Einträgen mit starken Passwörtern")
+        print("[8] - Suche nach Einträgen mit Email-Adresse als Username")
+        print("[9] - Entferne Einträge, deren Website keine .com Domain ist")
+        print("[10] - Suche nach Einträgen mit ungerader ID, absteigend sortiert nach Username")
+        print("[11] - Beende das Programm")
         print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
         var input: Int = enterInteger()
-        while input <= 0 || input >= 8 {
+        while input <= 0 || input >= 12 {
             print("Falsche Eingabe, bitte erneut versuchen.")
             input = enterInteger()
         }
@@ -98,6 +102,18 @@ class Vault {
             searchForWebsite(wantedWebsite)
         }
         if input == 7 {
+            printStrongPasswords()
+        }
+        if input == 8 {
+            printEmailUserNames()
+        }
+        if input == 9 {
+            removeNotComDomain()
+        }
+        if input == 10 {
+            sortFilterPrint()
+        }
+        if input == 11 {
             exit(0)
         }
     }
