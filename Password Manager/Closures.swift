@@ -20,3 +20,9 @@ let isEmail: (Entry) -> Bool = { entry in entry.userName.contains("@") }
 // Aufgabe 3.4 Websites, die nicht auf .com enden
 
 let isNotComDomain: (Entry) -> Bool = { entry in !entry.website.hasSuffix(".com") }
+
+// Aufgabe 3.5 Mehrere Higher Order Functions verketten
+
+let userNameDescending: (Entry, Entry) -> Bool = { $0.userName > $1.userName }
+
+let evenIds: (Entry) -> Bool = { $0.id % 2 == 0 }

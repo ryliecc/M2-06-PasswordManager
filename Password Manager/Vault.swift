@@ -216,6 +216,12 @@ class Vault {
         entries.removeAll(where: isNotComDomain)
     }
     
+    // Aufgabe 3.5 Mehrere Higher Order Functions verketten
+    
+    func sortFilterPrint() {
+        entries.sorted(by: userNameDescending).filter(evenIds).forEach { print($0) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {
