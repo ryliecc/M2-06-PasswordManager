@@ -61,10 +61,11 @@ class Vault {
         print("[3] - Filter Einträge nach Username")
         print("[4] - Sortiere Einträge alphabetisch nach Website")
         print("[5] - Lösche alte Einträge")
-        print("[6] - Beende das Programm")
+        print("[6] - Suche nach Eintrag mit bestimmter Website")
+        print("[7] - Beende das Programm")
         print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
         var input: Int = enterInteger()
-        while input <= 0 || input >= 7 {
+        while input <= 0 || input >= 8 {
             print("Falsche Eingabe, bitte erneut versuchen.")
             input = enterInteger()
         }
@@ -92,6 +93,11 @@ class Vault {
             deleteOldEntries()
         }
         if input == 6 {
+            print("Für welche Website möchtest du den Eintrag sehen?")
+            let wantedWebsite: String = readLine()!
+            searchForWebsite(wantedWebsite)
+        }
+        if input == 7 {
             exit(0)
         }
     }
@@ -135,6 +141,7 @@ class Vault {
         if foundEntry == nil {
             print("Keinen Eintrag für die Website \(website) gefunden.")
         } else {
+            print("Gefundener Eintrag:")
             print(foundEntry!)
         }
     }

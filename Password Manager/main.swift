@@ -30,8 +30,9 @@ vault1.addEntry(entry1, entry2, entry3)
 
 // Aufgabe 1.7 Website Suche mit Rekursion
 
-vault1.searchForWebsite("tiktok.com")
-vault1.searchForWebsite("github.com")
+//vault1.searchForWebsite("tiktok.com")
+//vault1.searchForWebsite("github.com")
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 2.1 Einträge nach Username filtern
 
