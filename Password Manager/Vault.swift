@@ -62,6 +62,7 @@ class Vault {
         print("[4] - Sortiere Einträge alphabetisch nach Website")
         print("[5] - Lösche alte Einträge")
         print("[6] - Suche nach Eintrag mit bestimmter Website")
+        // Aufgabe 3.6 Menü erweitern
         print("[7] - Suche nach Einträgen mit starken Passwörtern")
         print("[8] - Suche nach Einträgen mit Email-Adresse als Username")
         print("[9] - Entferne Einträge, deren Website keine .com Domain ist")
