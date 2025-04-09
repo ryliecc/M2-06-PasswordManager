@@ -209,6 +209,14 @@ class Vault {
         entries.filter(isEmail).forEach { entry in print(entry) }
     }
     
+    // Aufgabe 3.4 Websites, die nicht auf .com enden
+    
+    func removeNotComDomain() {
+        let notComDomainEntries = entries.filter(isNotComDomain)
+        entries.removeAll(where: isNotComDomain)
+        notComDomainEntries.forEach { entry in print(entry) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {

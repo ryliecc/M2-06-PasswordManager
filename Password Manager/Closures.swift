@@ -15,4 +15,8 @@ let isStrongPassword: (Entry) -> Bool = { $0.password.count >= 8 }
 
 // Aufgabe 3.3 Usernamen, die Emailadressen sind
 
-let isEmail: (Entry) -> Bool = { entry in entry.userName.contains("@")}
+let isEmail: (Entry) -> Bool = { entry in entry.userName.contains("@") }
+
+// Aufgabe 3.4 Websites, die nicht auf .com enden
+
+let isNotComDomain: (Entry) -> Bool = { entry in !entry.website.hasSuffix(".com") }
