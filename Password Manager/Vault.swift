@@ -203,6 +203,12 @@ class Vault {
         entries.filter(isStrongPassword).forEach { print($0) }
     }
     
+    // Aufgabe 3.3 Usernamen, die Emailadressen sind
+    
+    func printEmailUserNames() {
+        entries.filter(isEmail).forEach { entry in print(entry) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {

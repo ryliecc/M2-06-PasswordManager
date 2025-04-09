@@ -12,3 +12,7 @@ import Foundation
 // Aufgabe 3.2 Starke Passwörter
 
 let isStrongPassword: (Entry) -> Bool = { $0.password.count >= 8 }
+
+// Aufgabe 3.3 Usernamen, die Emailadressen sind
+
+let isEmail: (Entry) -> Bool = { entry in entry.userName.contains("@")}
