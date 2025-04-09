@@ -128,6 +128,28 @@ class Vault {
         return firstInput
     }
     
+    // Aufgabe 1.7 Website Suche mit Rekursion
+    
+    func searchForWebsite(_ website: String) {
+        let foundEntry: Entry? = searchEntry(index: 0, website: website)
+        if foundEntry == nil {
+            print("Keinen Eintrag für die Website \(website) gefunden.")
+        } else {
+            print(foundEntry!)
+        }
+    }
+    
+    private func searchEntry(index: Int, website: String) -> Entry? {
+        if index >= entries.count {
+            return nil
+        }
+        if entries[index].website != website {
+            return searchEntry(index: index + 1, website: website)
+        } else {
+            return entries[index]
+        }
+    }
+    
     // Aufgabe 2.1 Einträge nach Username filtern
     
     func filterEntriesByUser(userName: String) {

@@ -28,6 +28,11 @@ vault1.addEntry(entry1, entry2, entry3)
 //vault1.menu()
 // Test erfolgreich, in run() integriert
 
+// Aufgabe 1.7 Website Suche mit Rekursion
+
+vault1.searchForWebsite("tiktok.com")
+vault1.searchForWebsite("github.com")
+
 // Aufgabe 2.1 Einträge nach Username filtern
 
 //vault1.filterEntriesByUser(userName: "jryliec")
