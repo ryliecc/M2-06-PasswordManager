@@ -197,6 +197,12 @@ class Vault {
         secureDisplayEntries.forEach { print($0) }
     }
     
+    // Aufgabe 3.2 Starke Passwörter
+    
+    func printStrongPasswords() {
+        entries.filter(isStrongPassword).forEach { print($0) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {
