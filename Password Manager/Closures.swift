@@ -25,4 +25,4 @@ let isNotComDomain: (Entry) -> Bool = { entry in !entry.website.hasSuffix(".com"
 
 let userNameDescending: (Entry, Entry) -> Bool = { $0.userName > $1.userName }
 
-let evenIds: (Entry) -> Bool = { $0.id % 2 == 0 }
+let unevenIds: (Entry) -> Bool = { $0.id % 2 != 0 }

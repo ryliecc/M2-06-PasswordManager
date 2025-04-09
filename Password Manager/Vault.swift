@@ -219,7 +219,7 @@ class Vault {
     // Aufgabe 3.5 Mehrere Higher Order Functions verketten
     
     func sortFilterPrint() {
-        entries.sorted(by: userNameDescending).filter(evenIds).forEach { print($0) }
+        entries.sorted(by: userNameDescending).filter(unevenIds).forEach { print($0) }
     }
     
     // Zusätzliche Hilfsmethoden
