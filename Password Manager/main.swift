@@ -51,6 +51,17 @@ vault1.addEntry(entry4)
 //vault1.deleteOldEntries()
 // Test erfolgreich, in menu() integriert
 
+// Aufgabe 3.7 Eigene Higher Order Function schreiben
+
+// Filter nach starken Passwörtern (bereits angelegtes closure)
+vault1.filterEntries(filter: isStrongPassword)
+print()
+// Filter nach Usernamen die eine Email Adresse sind (bereits angelegtes closure)
+vault1.filterEntries(filter: isEmail)
+print()
+// Filter nach Usernamen, die "rylie" enthalten (neu geschriebenes closure)
+vault1.filterEntries(filter: { $0.userName.contains("rylie") })
+
 // Run Methode für das gesamte Programm
 print()
 print()

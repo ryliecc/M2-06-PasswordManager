@@ -239,6 +239,12 @@ class Vault {
         entries.sorted(by: userNameDescending).filter(unevenIds).forEach { print($0) }
     }
     
+    // Aufgabe 3.7 Eigene Higher Order Function schreiben
+    
+    func filterEntries(filter: (Entry) -> Bool) {
+        entries.filter(filter).forEach { print($0) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {
