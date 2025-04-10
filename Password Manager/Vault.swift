@@ -245,6 +245,18 @@ class Vault {
         entries.filter(filter).forEach { print($0) }
     }
     
+    // Aufgabe 4.2 Tresor durchsuchen
+    
+    func searchNames(name: String) {
+        for entry in entries {
+            if sameName(entry, name) {
+                print("Nutzername \(name) in Eintrag Nr. \(entry.id) gefunden!")
+            } else {
+                print("Nicht \(name), sondern \(entry.userName) gefunden.")
+            }
+        }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {

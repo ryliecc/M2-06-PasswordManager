@@ -33,3 +33,8 @@ let unevenIds: (Entry) -> Bool = { $0.id % 2 != 0 }
 let printDescription: () -> () = { print("Das hier ist ein Tresor Eintrag.") }
 
 let printSaveInfo: () -> () = { print("Änderungen gespeichert!") }
+
+
+// Aufgabe 4.2 Tresor durchsuchen
+
+let sameName: (Entry, String) -> Bool = { $0.userName == $1 }

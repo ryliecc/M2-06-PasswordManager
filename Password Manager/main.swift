@@ -67,6 +67,10 @@ vault1.filterEntries(filter: { $0.userName.contains("rylie") })
 entry4.run(action: printDescription)
 entry4.run(action: printSaveInfo)
 
+// Aufgabe 4.2 Tresor durchsuchen
+
+vault1.searchNames(name: "ryliecc")
+
 // Run Methode für das gesamte Programm
 print()
 print()
