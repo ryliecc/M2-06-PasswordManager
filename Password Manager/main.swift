@@ -52,6 +52,7 @@ vault1.addEntry(entry4)
 // Test erfolgreich, in menu() integriert
 
 // Aufgabe 3.7 Eigene Higher Order Function schreiben
+// Aufgabe 4.3 Mächtige Higher Order Function zum Filtern schreiben
 
 // Filter nach starken Passwörtern (bereits angelegtes closure)
 vault1.filterEntries(filter: isStrongPassword)

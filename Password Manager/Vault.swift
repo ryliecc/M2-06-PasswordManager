@@ -240,6 +240,7 @@ class Vault {
     }
     
     // Aufgabe 3.7 Eigene Higher Order Function schreiben
+    // Aufgabe 4.3 Mächtige Higher Order Function zum Filtern schreiben
     
     func filterEntries(filter: (Entry) -> Bool) {
         entries.filter(filter).forEach { print($0) }
