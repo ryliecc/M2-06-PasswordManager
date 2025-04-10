@@ -38,3 +38,7 @@ let printSaveInfo: () -> () = { print("Änderungen gespeichert!") }
 // Aufgabe 4.2 Tresor durchsuchen
 
 let sameName: (Entry, String) -> Bool = { $0.userName == $1 }
+
+// Aufgabe 4.5 Passwort überprüfen
+
+let isPasswordNumber: (Entry) -> Bool = { entry in entry.password.contains { $0.isNumber }}

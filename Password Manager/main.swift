@@ -76,6 +76,11 @@ vault1.searchNames(name: "ryliecc")
 
 vault1.sortEntries(filterMethod: { $0.userName < $1.userName })
 
+// Aufgabe 4.5 Passwort überprüfen
+
+entry1.passwordContainsNumber()
+entry2.passwordContainsNumber()
+
 // Run Methode für das gesamte Programm
 print()
 print()

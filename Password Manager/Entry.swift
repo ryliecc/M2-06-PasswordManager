@@ -24,4 +24,14 @@ struct Entry: CustomStringConvertible {
     func run(action: () -> ()) {
         action()
     }
+    
+    // Aufgabe 4.5 Passwort überprüfen
+    
+    func passwordContainsNumber() {
+        if isPasswordNumber(self) {
+            print("Das Passwort \(password) enthält eine Zahl.")
+        } else {
+            print("Das Passwort \(password) enthält keine Zahl. Es wird empfohlen das Passwort sicherer zu machen indem eine Zahl hinzugefügt wird.")
+        }
+    }
 }
