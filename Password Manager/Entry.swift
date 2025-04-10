@@ -18,4 +18,10 @@ struct Entry: CustomStringConvertible {
     var description: String {
         "\(id). Website: \(website) - Username: \(userName) - Passwort: \(password)"
     }
+    
+    // Aufgabe 4.1 Eintrag erweitern
+    
+    func run(action: () -> ()) {
+        action()
+    }
 }

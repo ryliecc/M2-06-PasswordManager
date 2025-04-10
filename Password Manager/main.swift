@@ -62,6 +62,11 @@ print()
 // Filter nach Usernamen, die "rylie" enthalten (neu geschriebenes closure)
 vault1.filterEntries(filter: { $0.userName.contains("rylie") })
 
+// Aufgabe 4.1 Eintrag erweitern
+
+entry4.run(action: printDescription)
+entry4.run(action: printSaveInfo)
+
 // Run Methode für das gesamte Programm
 print()
 print()

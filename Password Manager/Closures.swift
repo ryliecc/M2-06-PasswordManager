@@ -26,3 +26,10 @@ let isNotComDomain: (Entry) -> Bool = { entry in !entry.website.hasSuffix(".com"
 let userNameDescending: (Entry, Entry) -> Bool = { $0.userName > $1.userName }
 
 let unevenIds: (Entry) -> Bool = { $0.id % 2 != 0 }
+
+
+// Aufgabe 4.1 Eintrag erweitern
+
+let printDescription: () -> () = { print("Das hier ist ein Tresor Eintrag.") }
+
+let printSaveInfo: () -> () = { print("Änderungen gespeichert!") }
