@@ -72,6 +72,10 @@ entry4.run(action: printSaveInfo)
 
 vault1.searchNames(name: "ryliecc")
 
+// Aufgabe 4.4 Mächtige Higher Order Function zum Sortieren schreiben
+
+vault1.sortEntries(filterMethod: { $0.userName < $1.userName })
+
 // Run Methode für das gesamte Programm
 print()
 print()

@@ -258,6 +258,12 @@ class Vault {
         }
     }
     
+    // Aufgabe 4.4 Mächtige Higher Order Function zum Sortieren schreiben
+    
+    func sortEntries(filterMethod: (Entry, Entry) -> Bool) {
+        entries.sorted(by: filterMethod).forEach { print($0) }
+    }
+    
     // Zusätzliche Hilfsmethoden
     
     private func enterInteger() -> Int {
