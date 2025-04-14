@@ -55,34 +55,35 @@ vault1.addEntry(entry4)
 // Aufgabe 4.3 Mächtige Higher Order Function zum Filtern schreiben
 
 // Filter nach starken Passwörtern (bereits angelegtes closure)
-vault1.filterEntries(filter: isStrongPassword)
-print()
+//vault1.filterEntries(filter: isStrongPassword)
 // Filter nach Usernamen die eine Email Adresse sind (bereits angelegtes closure)
-vault1.filterEntries(filter: isEmail)
-print()
+//vault1.filterEntries(filter: isEmail)
 // Filter nach Usernamen, die "rylie" enthalten (neu geschriebenes closure)
-vault1.filterEntries(filter: { $0.userName.contains("rylie") })
+//vault1.filterEntries(filter: { $0.userName.contains("rylie") })
+// Tests erfolgreich, in menu() integriert
 
 // Aufgabe 4.1 Eintrag erweitern
 
-entry4.run(action: printDescription)
-entry4.run(action: printSaveInfo)
+//entry4.run(action: printDescription)
+//entry4.run(action: printSaveInfo)
+// Test erfolgreich, in addEntry() integriert
 
 // Aufgabe 4.2 Tresor durchsuchen
 
-vault1.searchNames(name: "ryliecc")
+//vault1.searchNames(name: "ryliecc")
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 4.4 Mächtige Higher Order Function zum Sortieren schreiben
 
-vault1.sortEntries(filterMethod: { $0.userName < $1.userName })
+//vault1.sortEntries(filterMethod: { $0.userName < $1.userName })
+// Test erfolgreich, in menu() integriert
 
 // Aufgabe 4.5 Passwort überprüfen
 
-entry1.passwordContainsNumber()
-entry2.passwordContainsNumber()
+//entry1.passwordContainsNumber()
+//entry2.passwordContainsNumber()
+// Test erfolgreich, in menu() integriert
 
 // Run Methode für das gesamte Programm
-print()
-print()
-print("-----Start des tatsächlichen Programms-----")
+
 vault1.run()

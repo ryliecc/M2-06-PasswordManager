@@ -18,8 +18,11 @@ class Vault {
     }
     
     func addEntry(_ newEntries: Entry...) {
+        print("Folgende\(newEntries.count > 1 ? " Einträge werden" : "r Eintrag wird") gespeichert:")
         for entry in newEntries {
+            entry.run(action: printDescription)
             entries.append(entry)
+            entry.run(action: printSaveInfo)
         }
     }
     
@@ -67,10 +70,15 @@ class Vault {
         print("[8] - Suche nach Einträgen mit Email-Adresse als Username")
         print("[9] - Entferne Einträge, deren Website keine .com Domain ist")
         print("[10] - Suche nach Einträgen mit ungerader ID, absteigend sortiert nach Username")
-        print("[11] - Beende das Programm")
+        // Aufgabe 4.6 Menü erweitern
+        print("[11] - Durchsuche Einträge nach bestimmten Username")
+        print("[12] - Filter Einträge nach verschiedenen Optionen")
+        print("[13] - Sortiere Einträge nach verschiedenen Optionen")
+        print("[14] - Überprüfe Passwortsicherheit")
+        print("[15] - Beende das Programm")
         print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
         var input: Int = enterInteger()
-        while input <= 0 || input >= 12 {
+        while input <= 0 || input >= 16 {
             print("Falsche Eingabe, bitte erneut versuchen.")
             input = enterInteger()
         }
@@ -115,6 +123,22 @@ class Vault {
             sortFilterPrint()
         }
         if input == 11 {
+            print("Nach welchem Username willst du suchen?")
+            let wantedUserName = readLine()!
+            searchNames(name: wantedUserName)
+        }
+        if input == 12 {
+            print("Vorläufig werden Einträge danach gefiltert, dass sie keine .com Domain als Website haben.")
+            filterEntries(filter: isNotComDomain)
+        }
+        if input == 13 {
+            print("Vorläufig werden Einträge nach Username absteigend sortiert.")
+            sortEntries(filterMethod: userNameDescending)
+        }
+        if input == 14 {
+            entries.forEach { entry in entry.passwordContainsNumber()}
+        }
+        if input == 15 {
             exit(0)
         }
     }
