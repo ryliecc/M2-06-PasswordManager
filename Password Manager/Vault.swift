@@ -61,24 +61,17 @@ class Vault {
         print("[1] - Erstelle neuen Eintrag")
         print("[2] - Zeige gespeicherte Einträge")
         // Aufgabe 2.5 Menü erweitern
-        print("[3] - Filter Einträge nach Username")
-        print("[4] - Sortiere Einträge alphabetisch nach Website")
-        print("[5] - Lösche alte Einträge")
-        print("[6] - Suche nach Eintrag mit bestimmter Website")
+        print("[3] - Lösche alte Einträge")
         // Aufgabe 3.6 Menü erweitern
-        print("[7] - Suche nach Einträgen mit starken Passwörtern")
-        print("[8] - Suche nach Einträgen mit Email-Adresse als Username")
-        print("[9] - Entferne Einträge, deren Website keine .com Domain ist")
-        print("[10] - Suche nach Einträgen mit ungerader ID, absteigend sortiert nach Username")
+        print("[4] - Entferne Einträge, deren Website keine .com Domain ist")
         // Aufgabe 4.6 Menü erweitern
-        print("[11] - Durchsuche Einträge nach bestimmten Username")
-        print("[12] - Filter Einträge nach verschiedenen Optionen")
-        print("[13] - Sortiere Einträge nach verschiedenen Optionen")
-        print("[14] - Überprüfe Passwortsicherheit")
-        print("[15] - Beende das Programm")
+        print("[5] - Filter Einträge nach verschiedenen Optionen")
+        print("[6] - Sortiere Einträge nach verschiedenen Optionen")
+        print("[7] - Überprüfe Passwortsicherheit")
+        print("[8] - Beende das Programm")
         print("Bitte gib die Zahl des gewünschten Menüpunkts ein.")
         var input: Int = enterInteger()
-        while input <= 0 || input >= 16 {
+        while input <= 0 || input >= 9 {
             print("Falsche Eingabe, bitte erneut versuchen.")
             input = enterInteger()
         }
@@ -95,50 +88,74 @@ class Vault {
             printAllEntries(password: masterPassword)
         }
         if input == 3 {
-            print("Nach welchem Username willst du suchen?")
-            let inputUserName: String = readLine()!
-            filterEntriesByUser(userName: inputUserName)
-        }
-        if input == 4 {
-            printEntriesSecurely(sortEntriesByWebsite())
-        }
-        if input == 5 {
             deleteOldEntries()
         }
-        if input == 6 {
-            print("Für welche Website möchtest du den Eintrag sehen?")
-            let wantedWebsite: String = readLine()!
-            searchForWebsite(wantedWebsite)
-        }
-        if input == 7 {
-            printStrongPasswords()
-        }
-        if input == 8 {
-            printEmailUserNames()
-        }
-        if input == 9 {
+        if input == 4 {
             removeNotComDomain()
         }
-        if input == 10 {
-            sortFilterPrint()
+        if input == 5 {
+            print("Folgende Filtermöglichkeiten:")
+            print("[1] - Nach Username")
+            print("[2] - Nach starken Passwörtern")
+            print("[3] - Email Adresse als Username")
+            print("[4] - Passwörter, die Zahlen enthalten")
+            print("[5] - Nach Website")
+            print("[6] - ungerade ID, alphabetisch sortiert nach Username")
+            print("Bitte gib die Zahl des gewünschten Filters ein.")
+            var chosenFilter = enterInteger()
+            while chosenFilter <= 0 && chosenFilter >= 6 {
+                print("Falsche Eingabe, bitte erneut versuchen.")
+                chosenFilter = enterInteger()
+            }
+            if chosenFilter == 1 {
+                print("Nach welchem Username willst du suchen?")
+                let inputUserName: String = readLine()!
+                searchNames(name: inputUserName)
+                filterEntriesByUser(userName: inputUserName)
+            }
+            if chosenFilter == 2 {
+                printStrongPasswords()
+            }
+            if chosenFilter == 3 {
+                printEmailUserNames()
+            }
+            if chosenFilter == 4 {
+                filterEntries(filter: isPasswordNumber)
+            }
+            if chosenFilter == 5 {
+                print("Für welche Website möchtest du den Eintrag sehen?")
+                let wantedWebsite: String = readLine()!
+                searchForWebsite(wantedWebsite)
+            }
+            if chosenFilter == 6 {
+                    sortFilterPrint()
+            }
         }
-        if input == 11 {
-            print("Nach welchem Username willst du suchen?")
-            let wantedUserName = readLine()!
-            searchNames(name: wantedUserName)
+        if input == 6 {
+            print("Folgende Sortiermöglichkeiten:")
+            print("[1] - Alphabetisch nach Website")
+            print("[2] - Antialphabetisch nach Username")
+            print("[3] - Aufsteigend in Passwortlänge")
+            print("Bitte gib die Zahl der gewünschten Sortiermöglichkeit ein.")
+            var chosenFilter = enterInteger()
+            while chosenFilter <= 0 && chosenFilter >= 4 {
+                print("Falsche Eingabe, bitte erneut versuchen.")
+                chosenFilter = enterInteger()
+            }
+            if chosenFilter == 1 {
+                printEntriesSecurely(sortEntriesByWebsite())
+            }
+            if chosenFilter == 2 {
+                sortEntries(filterMethod: userNameDescending)
+            }
+            if chosenFilter == 3 {
+                sortEntries(filterMethod: passwordLengthAscending)
+            }
         }
-        if input == 12 {
-            print("Vorläufig werden Einträge danach gefiltert, dass sie keine .com Domain als Website haben.")
-            filterEntries(filter: isNotComDomain)
-        }
-        if input == 13 {
-            print("Vorläufig werden Einträge nach Username absteigend sortiert.")
-            sortEntries(filterMethod: userNameDescending)
-        }
-        if input == 14 {
+        if input == 7 {
             entries.forEach { entry in entry.passwordContainsNumber()}
         }
-        if input == 15 {
+        if input == 8 {
             exit(0)
         }
     }

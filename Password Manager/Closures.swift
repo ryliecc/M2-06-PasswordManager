@@ -42,3 +42,7 @@ let sameName: (Entry, String) -> Bool = { $0.userName == $1 }
 // Aufgabe 4.5 Passwort überprüfen
 
 let isPasswordNumber: (Entry) -> Bool = { entry in entry.password.contains { $0.isNumber }}
+
+// Zusätzliches Sortier Closure
+
+let passwordLengthAscending: (Entry, Entry) -> Bool = { $0.password.count < $1.password.count }

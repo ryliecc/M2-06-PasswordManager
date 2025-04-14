@@ -85,5 +85,7 @@ vault1.addEntry(entry4)
 // Test erfolgreich, in menu() integriert
 
 // Run Methode für das gesamte Programm
-
+print()
+print()
+print("-----Start des tatsächlichen Programms-----")
 vault1.run()
